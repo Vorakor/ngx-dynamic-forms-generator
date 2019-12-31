@@ -1,0 +1,121 @@
+<div
+  [formGroup]="form"
+  class="fake-form"
+  [ngClass]="formInline ? 'form-inline' : ''"
+>
+  <ng-container
+    *ngIf="
+      field.label && field.type !== 'checkbox' && field.type !== 'checkbox-btn'
+    "
+  >
+    <label
+      [ngClass]="formInline ? 'mx-2' : ''"
+      for="{{ field.id ? field.id.toString() : '' }}"
+    >
+      {{ field.label }}
+      <span *ngIf="field.optional" class="text-muted">&nbsp;optional</span>
+    </label>
+  </ng-container>
+  <ng-container *ngIf="field.type == 'text' || field.type == 'password'">
+    <input
+      id="{{ field.id ? field.id.toString() : '' }}"
+      class="form-control {{ field.class }}"
+      [autofocus]="field.focus ? 'true' : null"
+      [type]="field.type"
+      [placeholder]="field.placeholder"
+      [formControlName]="field.name"
+      [attr.disabled]="field.disabled ? 'true' : null"
+      [value]="field.value ? field.value : ''"
+      placement="right"
+      ngbTooltip="{{ getFirstError() ? getFirstError() : 'An error occurred' }}"
+      disableTooltip="{{
+        formControl.dirty && formControl.errors && !formControl.pending
+          ? null
+          : 'disabled'
+      }}"
+    />
+  </ng-container>
+  <ng-container *ngIf="field.type == 'select'">
+    <select
+      id="{{ field.id ? field.id.toString() : '' }}"
+      class="form-control {{ field.class }}"
+      [autofocus]="field.focus ? 'true' : null"
+      [attr.multiple]="field.multiple ? 'true' : null"
+      [formControlName]="field.name"
+      [attr.disabled]="field.disabled ? 'true' : null"
+      placement="right"
+      ngbTooltip="{{ getFirstError() ? getFirstError() : 'An error occurred' }}"
+      disableTooltip="{{
+        formControl.dirty && formControl.errors && !formControl.pending
+          ? null
+          : 'disabled'
+      }}"
+    >
+      <option disabled></option>
+      <option
+        *ngFor="let item of field.options"
+        [ngValue]="item.value"
+        [attr.selected]="field.selected == item.value ? 'selected' : null"
+        >{{ item.label }}</option
+      >
+    </select>
+  </ng-container>
+  <ng-container *ngIf="field.type == 'checkbox'">
+    <div class="form-group form-check">
+      <input
+        type="checkbox"
+        class="form-check-input {{ field.class }}"
+        [formControlName]="field.name"
+        [attr.disabled]="field.disabled ? 'true' : null"
+        [value]="field.name"
+        [attr.checked]="field.selected ? 'checked' : null"
+        [id]="field.id"
+      />
+      <label class="form-check-label" for="{{ field.id }}">{{
+        field.label
+      }}</label>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="field.type == 'checkbox-btn'">
+    <div class="btn-group btn-group-toggle w-100">
+      <label class="btn-primary w-100" ngbButtonLabel>
+        <input
+          type="checkbox"
+          class="{{ field.class }}"
+          [formControlName]="field.name"
+          [id]="field.id"
+          [attr.disabled]="field.disabled ? 'true' : null"
+          [value]="field.name"
+          [attr.checked]="field.selected ? 'checked' : null"
+          ngbButton
+        />{{ field.label }}
+      </label>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="field.type == 'textarea'">
+    <textarea
+      id="{{ field.id ? field.id.toString() : '' }}"
+      class="form-control {{ field.class }}"
+      [placeholder]="field.placeholder"
+      [formControlName]="field.name"
+      [autofocus]="field.focus ? 'true' : null"
+      [attr.disabled]="field.disabled ? 'true' : null"
+      [attr.rows]="
+        field.class?.includes('textarea-lg')
+          ? '10'
+          : field.class?.includes('textarea-md')
+          ? '5'
+          : '3'
+      "
+      [value]="field.value ? field.value : ''"
+      placement="right"
+      ngbTooltip="{{ getFirstError() ? getFirstError() : 'An error occurred' }}"
+      disableTooltip="{{
+        formControl.dirty && formControl.errors && !formControl.pending
+          ? null
+          : 'disabled'
+      }}"
+    ></textarea>
+  </ng-container>
+  <ng-content select=".input-extra"></ng-content>
+</div>
