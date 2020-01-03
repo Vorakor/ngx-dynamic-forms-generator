@@ -6,8 +6,8 @@ import { NgxDynamicFormInputComponent } from './ngx-dynamic-form-input/ngx-dynam
 import { NgxDynamicFormsComponent } from './ngx-dynamic-forms/ngx-dynamic-forms.component';
 
 @NgModule({
-	declarations: [NgxDynamicFormsComponent, NgxDynamicFormInputComponent],
-	imports: [CommonModule, ReactiveFormsModule, FormsModule],
-	exports: [NgxDynamicFormsComponent],
+    declarations: [NgxDynamicFormsComponent, NgxDynamicFormInputComponent],
+    imports: [CommonModule, ReactiveFormsModule, FormsModule],
+    exports: [NgxDynamicFormsComponent],
 })
 export class NgxDynamicFormsModule {}
