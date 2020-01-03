@@ -14,10 +14,10 @@
         </div>
         <div class="row justify-content-center my-2">
           <div class="col-3 my-2" *ngFor="let field of group.fields">
-            <dynamic-form-input
+            <ngx-df-input
               [field]="getField(field)"
               [form]="formGroup"
-            ></dynamic-form-input>
+            ></ngx-df-input>
           </div>
         </div>
       </ng-container>
@@ -38,17 +38,17 @@
                 'max-width.px': maxCheckboxWidth
               }"
             >
-              <dynamic-form-input
+              <ngx-df-input
                 [field]="input"
                 [form]="formGroup"
-              ></dynamic-form-input>
+              ></ngx-df-input>
             </div>
           </ng-container>
           <ng-container *ngIf="input.type !== 'checkbox-btn'">
-            <dynamic-form-input
+            <ngx-df-input
               [field]="input"
               [form]="formGroup"
-            ></dynamic-form-input>
+            ></ngx-df-input>
           </ng-container>
         </div>
       </div>
@@ -99,19 +99,19 @@
             class="checkbox-container"
             [style]="'max-width: ' + maxCheckboxWidth + 'px'"
           >
-            <dynamic-form-input
+            <ngx-df-input
               [field]="input"
               [form]="formGroup"
               [formInline]="formInline"
-            ></dynamic-form-input>
+            ></ngx-df-input>
           </div>
         </ng-container>
         <ng-container *ngIf="input.type !== 'checkbox-btn'">
-          <dynamic-form-input
+          <ngx-df-input
             [field]="input"
             [form]="formGroup"
             [formInline]="formInline"
-          ></dynamic-form-input>
+          ></ngx-df-input>
         </ng-container>
       </div>
     </div>

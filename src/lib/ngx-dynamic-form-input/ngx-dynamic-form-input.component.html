@@ -27,12 +27,6 @@
       [attr.disabled]="field.disabled ? 'true' : null"
       [value]="field.value ? field.value : ''"
       placement="right"
-      ngbTooltip="{{ getFirstError() ? getFirstError() : 'An error occurred' }}"
-      disableTooltip="{{
-        formControl.dirty && formControl.errors && !formControl.pending
-          ? null
-          : 'disabled'
-      }}"
     />
   </ng-container>
   <ng-container *ngIf="field.type == 'select'">
@@ -44,12 +38,6 @@
       [formControlName]="field.name"
       [attr.disabled]="field.disabled ? 'true' : null"
       placement="right"
-      ngbTooltip="{{ getFirstError() ? getFirstError() : 'An error occurred' }}"
-      disableTooltip="{{
-        formControl.dirty && formControl.errors && !formControl.pending
-          ? null
-          : 'disabled'
-      }}"
     >
       <option disabled></option>
       <option
@@ -78,7 +66,7 @@
   </ng-container>
   <ng-container *ngIf="field.type == 'checkbox-btn'">
     <div class="btn-group btn-group-toggle w-100">
-      <label class="btn-primary w-100" ngbButtonLabel>
+      <label class="btn-primary w-100">
         <input
           type="checkbox"
           class="{{ field.class }}"
@@ -87,7 +75,6 @@
           [attr.disabled]="field.disabled ? 'true' : null"
           [value]="field.name"
           [attr.checked]="field.selected ? 'checked' : null"
-          ngbButton
         />{{ field.label }}
       </label>
     </div>
@@ -109,12 +96,6 @@
       "
       [value]="field.value ? field.value : ''"
       placement="right"
-      ngbTooltip="{{ getFirstError() ? getFirstError() : 'An error occurred' }}"
-      disableTooltip="{{
-        formControl.dirty && formControl.errors && !formControl.pending
-          ? null
-          : 'disabled'
-      }}"
     ></textarea>
   </ng-container>
   <ng-content select=".input-extra"></ng-content>
