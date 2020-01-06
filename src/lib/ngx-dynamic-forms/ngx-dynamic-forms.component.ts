@@ -28,6 +28,7 @@ export class NgxDynamicFormsComponent implements OnInit, OnChanges {
     formGroups: NgxDFFieldDefinition[];
     minCheckboxWidth = 100;
     maxCheckboxWidth = 100;
+    minButtonWidth = 100;
     constructor() {}
 
     ngOnInit() {
@@ -97,5 +98,20 @@ export class NgxDynamicFormsComponent implements OnInit, OnChanges {
         context.font = '16px Arial';
         this.minCheckboxWidth = Math.ceil(context.measureText(maxString).width);
         this.maxCheckboxWidth = this.minCheckboxWidth + 30;
+    }
+
+    setButtonSize() {
+        let maxString = '';
+        [this.config.submitBtnText, this.config.resetBtnText].forEach(text => {
+            if (maxString.length === 0) {
+                maxString = text;
+            } else if (text.length > maxString.length) {
+                maxString = text;
+            }
+        });
+        const c = document.createElement('canvas');
+        const context = c.getContext('2d');
+        context.font = '16px Arial';
+        this.minButtonWidth = Math.ceil(context.measureText(maxString).width);
     }
 }

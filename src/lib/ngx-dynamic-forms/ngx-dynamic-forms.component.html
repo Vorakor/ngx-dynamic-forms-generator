@@ -1,5 +1,5 @@
 <form
-  class="{{ config.formClass }}"
+  class="{{ config.formClass }} ngx-df-form"
   role="form"
   [formGroup]="formGroup"
   (ngSubmit)="submit()"
@@ -7,13 +7,13 @@
   <ng-container *ngIf="!formInline">
     <ng-container *ngIf="config.formGroups">
       <ng-container *ngFor="let group of config.formGroups">
-        <div class="row my-2">
-          <div class="col">
+        <div class="ngx-df-row">
+          <div class="ngx-df-col">
             <h3>{{ group.name }}</h3>
           </div>
         </div>
-        <div class="row justify-content-center my-2">
-          <div class="col-3 my-2" *ngFor="let field of group.fields">
+        <div class="ngx-df-row">
+          <div class="ngx-df-col-3" *ngFor="let field of group.fields">
             <ngx-df-input
               [field]="getField(field)"
               [form]="formGroup"
@@ -25,14 +25,14 @@
     <ng-container *ngIf="!formGroups">
       <div
         *ngFor="let input of formInputs"
-        class="row my-2 justify-content-center"
+        class="ngx-df-row"
       >
-        <div class="col">
+        <div class="ngx-df-col">
           <ng-container
             *ngIf="input.type === 'checkbox-btn' || input.type === 'checkbox'"
           >
             <div
-              class="checkbox-container"
+              class="ngx-df-checkbox-container"
               [ngStyle]="{
                 'min-width.px': minCheckboxWidth,
                 'max-width.px': maxCheckboxWidth
@@ -54,12 +54,15 @@
       </div>
     </ng-container>
     <hr *ngIf="config.footerDivider" />
-    <div class="row my-2 mx-2 text-center">
-      <div class="col">
+    <div class="ngx-df-row">
+      <div class="ngx-df-col">
         <button
           type="submit"
-          class="btn btn-success"
+          class="ngx-df-btn ngx-df-btn-success"
           [disabled]="!formGroup.valid"
+          [ngStyle]="{
+            'min-width.px': minButtonWidth
+          }"
           [attr.disabled]="
             (config.submitBtnEnabled$ | async)
               ? null
@@ -71,11 +74,14 @@
           {{ config.submitBtnText ? config.submitBtnText : "Submit" }}
         </button>
       </div>
-      <div class="col" *ngIf="config.resetBtn">
+      <div class="ngx-df-col" *ngIf="config.resetBtn">
         <button
           type="button"
-          class="btn btn-danger"
+          class="ngx-df-btn ngx-df-btn-danger"
           (click)="reset()"
+          [ngStyle]="{
+            'min-width.px': minButtonWidth
+          }"
           [attr.disabled]="
             (config.resetBtnEnabled$ | async)
               ? null
@@ -89,14 +95,15 @@
       </div>
     </div>
   </ng-container>
+  <!-- Horizontal Form -->
   <ng-container *ngIf="formInline">
-    <div *ngFor="let input of formInputs" class="row my-2">
-      <div class="col">
+    <div *ngFor="let input of formInputs" class="ngx-df-row ngx-df-flex-direction-row">
+      <div class="ngx-df-col ta-right">
         <ng-container
           *ngIf="input.type === 'checkbox-btn' || input.type === 'checkbox'"
         >
           <div
-            class="checkbox-container"
+            class="ngx-df-checkbox-container"
             [style]="'max-width: ' + maxCheckboxWidth + 'px'"
           >
             <ngx-df-input
@@ -114,13 +121,14 @@
           ></ngx-df-input>
         </ng-container>
       </div>
-    </div>
-    <div class="row my-2 mx-2 text-center">
-      <div class="col">
+      <div class="ngx-df-col ta-left">
         <button
           type="submit"
-          class="btn btn-success"
+          class="ngx-df-btn ngx-df-btn-success"
           [disabled]="!formGroup.valid"
+          [ngStyle]="{
+            'min-width.px': minButtonWidth
+          }"
           [attr.disabled]="
             (config.submitBtnEnabled$ | async)
               ? null
@@ -131,22 +139,25 @@
         >
           {{ config.submitBtnText ? config.submitBtnText : "Submit" }}
         </button>
-      </div>
-      <div class="col" *ngIf="config.resetBtn">
-        <button
-          type="button"
-          class="btn btn-danger"
-          (click)="reset()"
-          [attr.disabled]="
-            (config.resetBtnEnabled$ | async)
-              ? null
-              : (config.resetBtnEnabled$ | async) === false
-              ? 'disabled'
-              : null
-          "
-        >
-          {{ config.resetBtnText ? config.resetBtnText : "Reset" }}
-        </button>
+        <ng-container *ngIf="config.resetBtn">
+          <button
+            type="button"
+            class="ngx-df-btn ngx-df-btn-danger"
+            (click)="reset()"
+            [ngStyle]="{
+              'min-width.px': minButtonWidth
+            }"
+            [attr.disabled]="
+              (config.resetBtnEnabled$ | async)
+                ? null
+                : (config.resetBtnEnabled$ | async) === false
+                ? 'disabled'
+                : null
+            "
+          >
+            {{ config.resetBtnText ? config.resetBtnText : "Reset" }}
+          </button>
+        </ng-container>
       </div>
     </div>
   </ng-container>

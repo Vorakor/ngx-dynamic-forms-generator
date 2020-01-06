@@ -1,4 +1,102 @@
-.checkbox-container {
+.ngx-df-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ngx-df-row {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.ngx-df-col {
+  flex: 1;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.ngx-df-btn {
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.ngx-df-btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.ngx-df-btn-danger {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.ngx-df-checkbox-container {
   margin-left: auto;
   margin-right: auto;
+}
+
+.ngx-df-flex-direction-row {
+  flex-direction: row;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.flex-6 {
+  flex: 6;
+}
+
+.flex-7 {
+  flex: 7;
+}
+
+.flex-8 {
+  flex: 8;
+}
+
+.flex-9 {
+  flex: 9;
+}
+
+.flex-10 {
+  flex: 10;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+.ta-center {
+  text-align: center;
 }

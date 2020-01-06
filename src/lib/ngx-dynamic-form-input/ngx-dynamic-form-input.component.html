@@ -1,7 +1,6 @@
 <div
   [formGroup]="form"
-  class="fake-form"
-  [ngClass]="formInline ? 'form-inline' : ''"
+  class="ngx-df-fake-form"
 >
   <ng-container
     *ngIf="
@@ -9,17 +8,17 @@
     "
   >
     <label
-      [ngClass]="formInline ? 'mx-2' : ''"
+      [ngClass]="formInline ? 'ngx-df-hm-2' : ''"
       for="{{ field.id ? field.id.toString() : '' }}"
     >
       {{ field.label }}
-      <span *ngIf="field.optional" class="text-muted">&nbsp;optional</span>
+      <span *ngIf="field.optional" class="ngx-df-text-muted">&nbsp;optional</span>
     </label>
   </ng-container>
   <ng-container *ngIf="field.type == 'text' || field.type == 'password'">
     <input
       id="{{ field.id ? field.id.toString() : '' }}"
-      class="form-control {{ field.class }}"
+      class="ngx-df-form-control ngx-df-input {{ field.class }}"
       [autofocus]="field.focus ? 'true' : null"
       [type]="field.type"
       [placeholder]="field.placeholder"
@@ -32,11 +31,14 @@
   <ng-container *ngIf="field.type == 'select'">
     <select
       id="{{ field.id ? field.id.toString() : '' }}"
-      class="form-control {{ field.class }}"
+      class="ngx-df-form-control ngx-df-select {{ field.class }}"
       [autofocus]="field.focus ? 'true' : null"
       [attr.multiple]="field.multiple ? 'true' : null"
       [formControlName]="field.name"
       [attr.disabled]="field.disabled ? 'true' : null"
+      [ngStyle]="{
+        'min-width.px': minSelectWidth
+      }"
       placement="right"
     >
       <option disabled></option>
@@ -49,48 +51,53 @@
     </select>
   </ng-container>
   <ng-container *ngIf="field.type == 'checkbox'">
-    <div class="form-group form-check">
-      <input
-        type="checkbox"
-        class="form-check-input {{ field.class }}"
-        [formControlName]="field.name"
-        [attr.disabled]="field.disabled ? 'true' : null"
-        [value]="field.name"
-        [attr.checked]="field.selected ? 'checked' : null"
-        [id]="field.id"
-      />
-      <label class="form-check-label" for="{{ field.id }}">{{
-        field.label
-      }}</label>
+    <div class="ngx-df-form-group">
+      <label class="ngx-df-form-control-label" for="{{ field.id }}">
+        <input
+          type="checkbox"
+          class="ngx-df-form-control ngx-df-checkbox {{ field.class }}"
+          [formControlName]="field.name"
+          [attr.disabled]="field.disabled ? 'true' : null"
+          [value]="field.name"
+          [attr.checked]="field.selected ? 'checked' : null"
+          [id]="field.id"
+        />
+        <span class="ngx-df-checkbox-custom"></span>
+        {{ field.label }}
+      </label>
     </div>
   </ng-container>
   <ng-container *ngIf="field.type == 'checkbox-btn'">
-    <div class="btn-group btn-group-toggle w-100">
-      <label class="btn-primary w-100">
+    <div class="ngx-df-form-group">
+      <label class="ngx-df-form-control-label">
         <input
           type="checkbox"
-          class="{{ field.class }}"
+          class="ngx-df-form-control ngx-df-checkbox-btn {{ field.class }}"
           [formControlName]="field.name"
           [id]="field.id"
           [attr.disabled]="field.disabled ? 'true' : null"
           [value]="field.name"
           [attr.checked]="field.selected ? 'checked' : null"
-        />{{ field.label }}
+        />
+        <div class="ngx-df-cb-label">
+          {{ field.label }}
+        </div>
+        <span class="ngx-df-checkbox-custom"></span>
       </label>
     </div>
   </ng-container>
   <ng-container *ngIf="field.type == 'textarea'">
     <textarea
       id="{{ field.id ? field.id.toString() : '' }}"
-      class="form-control {{ field.class }}"
+      class="ngx-df-form-control ngx-df-textarea {{ field.class }}"
       [placeholder]="field.placeholder"
       [formControlName]="field.name"
       [autofocus]="field.focus ? 'true' : null"
       [attr.disabled]="field.disabled ? 'true' : null"
       [attr.rows]="
-        field.class?.includes('textarea-lg')
+        field.class?.includes('ngx-df-textarea-lg')
           ? '10'
-          : field.class?.includes('textarea-md')
+          : field.class?.includes('ngx-df-textarea-md')
           ? '5'
           : '3'
       "

@@ -13,6 +13,7 @@ export class NgxDynamicFormInputComponent implements OnInit {
     @Input() form: FormGroup = new FormGroup({});
     @Input() formInline = false;
     formControl: FormControl;
+    minSelectWidth = 0;
     constructor() {}
 
     ngOnInit() {
@@ -37,5 +38,20 @@ export class NgxDynamicFormInputComponent implements OnInit {
             }
             return this.field.errorMap[errorKey] || errorKey;
         }
+    }
+
+    setSelectSize() {
+        let maxString = '';
+        this.field.options.forEach(input => {
+            if (maxString.length === 0) {
+                maxString = input.label;
+            } else if (input.label.length > maxString.length) {
+                maxString = input.label;
+            }
+        });
+        const c = document.createElement('canvas');
+        const context = c.getContext('2d');
+        context.font = '16px Arial';
+        this.minSelectWidth = Math.ceil(context.measureText(maxString).width) + 30;
     }
 }
