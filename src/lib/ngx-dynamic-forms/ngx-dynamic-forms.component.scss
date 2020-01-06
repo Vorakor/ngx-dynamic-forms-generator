@@ -1,3 +1,7 @@
+button {
+  cursor: pointer;
+}
+
 .ngx-df-form {
   display: flex;
   flex-direction: column;
@@ -34,10 +38,16 @@
   border-color: #28a745;
 }
 
-.ngx-df-btn-danger {
+.ngx-df-btn-info {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+}
+
+.ngx-df-btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 
 .ngx-df-checkbox-container {
