@@ -1,5 +1,20 @@
 # NgxDynamicForms
 
+## TODO
+
+Don't release until README has been completed.
+
+## TODO Future Features
+
+-   Add modals as optional configuration for adding / editing records
+-   Add button elements within form to open add / edit modals
+-   Work on grouping template and on table templating structures
+-   Work on color scheming capabilities
+-   Build out unit testing for Dynamic Forms
+-   Ensure that styling is correct for all inputs
+-   Add support for any inputs not currently in place
+-   Add support for different kinds of events and or triggers, such as on focus and on blur for inputs
+
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
 ## Code scaffolding
