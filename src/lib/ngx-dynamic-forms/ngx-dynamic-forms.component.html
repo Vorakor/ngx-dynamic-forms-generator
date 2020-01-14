@@ -114,11 +114,13 @@
           </div>
         </ng-container>
         <ng-container *ngIf="input.type !== 'checkbox-btn'">
-          <ngx-df-input
-            [field]="input"
-            [form]="formGroup"
-            [formInline]="formInline"
-          ></ngx-df-input>
+          <div class="ngx-df-input-container">
+            <ngx-df-input
+              [field]="input"
+              [form]="formGroup"
+              [formInline]="formInline"
+            ></ngx-df-input>
+          </div>
         </ng-container>
       </div>
       <div class="ngx-df-col ta-left">
