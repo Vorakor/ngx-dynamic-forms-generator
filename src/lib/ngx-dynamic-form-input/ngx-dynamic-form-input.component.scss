@@ -1,5 +1,7 @@
 .ngx-df-fake-form {
     width: 100%;
+    height: inherit;
+    line-height: inherit;
 }
 
 .ngx-df-hm-1 {
@@ -39,13 +41,14 @@
 .ngx-df-form-group {
     position: relative;
     display: block;
-    height: 40px;
+    height: inherit;
+    line-height: inherit;
 }
 
 .ngx-df-form-control {
     display: block;
-    height: 100%;
-    line-height: 40px;
+    height: inherit;
+    line-height: inherit;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
@@ -143,10 +146,14 @@
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
+    height: inherit;
+    line-height: inherit;
 }
 
 .ngx-df-select {
     display: inline-block;
+    height: inherit;
+    line-height: inherit;
     padding: 0.6em 1.4em 0.5em 0.8em;
     max-width: 100%;
     box-sizing: border-box;
