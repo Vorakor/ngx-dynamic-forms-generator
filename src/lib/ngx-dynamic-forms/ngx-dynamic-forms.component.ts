@@ -46,6 +46,7 @@ export class NgxDynamicFormsComponent implements OnInit, OnChanges {
             if (chk) {
                 this.setCheckboxSize();
             }
+            this.reloadForm();
         }
     }
 
@@ -113,5 +114,13 @@ export class NgxDynamicFormsComponent implements OnInit, OnChanges {
         const context = c.getContext('2d');
         context.font = '16px Arial';
         this.minButtonWidth = Math.ceil(context.measureText(maxString).width);
+    }
+
+    reloadForm() {
+        Object.keys(this.formGroup.controls).forEach(key => {
+            if (this.formInputs.map(input => input.name).indexOf(key) === -1) {
+                this.formGroup.removeControl(key);
+            }
+        });
     }
 }
