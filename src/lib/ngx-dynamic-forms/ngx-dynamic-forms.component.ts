@@ -32,7 +32,7 @@ export class NgxDynamicFormsComponent implements OnInit, OnChanges {
     constructor() {}
 
     ngOnInit() {
-        if (this.config.formClass.includes('ngx-df-form-inline')) {
+        if (this.config.formClass && this.config.formClass.includes('ngx-df-form-inline')) {
             this.formInline = true;
         }
     }
