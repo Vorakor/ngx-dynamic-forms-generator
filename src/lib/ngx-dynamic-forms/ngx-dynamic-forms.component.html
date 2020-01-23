@@ -59,6 +59,11 @@
         <button
           type="submit"
           class="ngx-df-btn ngx-df-btn-success"
+          [ngClass]="(config.submitBtnEnabled$ | async)
+            ? null
+            : (config.submitBtnEnabled$ | async) === false
+            ? 'disabled'
+            : null"
           [disabled]="!formGroup.valid"
           [ngStyle]="{
             'min-width.px': minButtonWidth
@@ -78,6 +83,11 @@
         <button
           type="button"
           class="ngx-df-btn ngx-df-btn-danger"
+          [ngClass]="(config.resetBtnEnabled$ | async)
+            ? null
+            : (config.resetBtnEnabled$ | async) === false
+            ? 'disabled'
+            : null"
           (click)="reset()"
           [ngStyle]="{
             'min-width.px': minButtonWidth
@@ -127,6 +137,11 @@
         <button
           type="submit"
           class="ngx-df-btn ngx-df-btn-success"
+          [ngClass]="(config.submitBtnEnabled$ | async)
+            ? null
+            : (config.submitBtnEnabled$ | async) === false
+            ? 'disabled'
+            : null"
           [disabled]="!formGroup.valid"
           [ngStyle]="{
             'min-width.px': minButtonWidth
@@ -145,6 +160,11 @@
           <button
             type="button"
             class="ngx-df-btn ngx-df-btn-danger"
+            [ngClass]="(config.resetBtnEnabled$ | async)
+            ? null
+            : (config.resetBtnEnabled$ | async) === false
+            ? 'disabled'
+            : null"
             (click)="reset()"
             [ngStyle]="{
               'min-width.px': minButtonWidth

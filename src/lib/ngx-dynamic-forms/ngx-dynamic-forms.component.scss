@@ -40,24 +40,41 @@ button {
   line-height: inherit;
   margin-left: 5px;
   margin-right: 5px;
+  cursor: pointer;
+  &.disabled {
+    cursor: default;
+  }
 }
 
 .ngx-df-btn-success {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745;
+  &.disabled {
+    background-color: rgba(#28a745, 0.3);
+    border-color: rgba(#28a745, 0.3);
+
+  }
 }
 
 .ngx-df-btn-info {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+  &.disabled {
+    background-color: rgba(#007bff, 0.3);
+    border-color: rgba(#007bff, 0.3);
+  }
 }
 
 .ngx-df-btn-danger {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
+  &.disabled {
+    background-color: rgba(#dc3545, 0.3);
+    border-color: rgba(#dc3545, 0.3);
+  }
 }
 
 .ngx-df-checkbox-container, .ngx-df-input-container {
