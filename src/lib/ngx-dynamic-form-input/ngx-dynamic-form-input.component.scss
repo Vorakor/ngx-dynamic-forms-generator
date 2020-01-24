@@ -193,6 +193,10 @@
     z-index: 3;
 }
 
+.ngx-df-form-control-label .ngx-df-cb-label, .ngx-df-form-control-label .ngx-df-checkbox-custom {
+    cursor: pointer;
+}
+
 // .ngx-df-textarea {
 //     //
 // }
