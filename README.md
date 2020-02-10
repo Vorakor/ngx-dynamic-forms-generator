@@ -6,9 +6,10 @@ Don't release until README has been completed.
 
 ## TODO Future Features
 
+-   Add configuration for simply providing an interface or object instead of field definition
 -   Add modals as optional configuration for adding / editing records
 -   Add button elements within form to open add / edit modals
--   Work on grouping template and on table templating structures
+-   Work on grouping template and on table templating structures (Use directives)
 -   Work on color scheming capabilities
 -   Build out unit testing for Dynamic Forms
 -   Ensure that styling is correct for all inputs

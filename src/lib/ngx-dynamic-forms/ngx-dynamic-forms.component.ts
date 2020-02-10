@@ -35,6 +35,9 @@ export class NgxDynamicFormsComponent implements OnInit, OnChanges {
         if (this.config.formClass && this.config.formClass.includes('ngx-df-form-inline')) {
             this.formInline = true;
         }
+        if (!this.config.hasOwnProperty('submitBtn')) {
+            this.config.submitBtn = true;
+        }
     }
 
     ngOnChanges(changes: SimpleChanges) {

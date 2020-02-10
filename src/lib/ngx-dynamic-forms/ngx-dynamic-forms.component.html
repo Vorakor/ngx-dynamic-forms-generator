@@ -55,7 +55,7 @@
     </ng-container>
     <hr *ngIf="config.footerDivider" />
     <div class="ngx-df-row">
-      <div class="ngx-df-col">
+      <div class="ngx-df-col" *ngIf="config.submitBtn">
         <button
           type="submit"
           class="ngx-df-btn ngx-df-btn-success"
@@ -133,7 +133,7 @@
           </div>
         </ng-container>
       </div>
-      <div class="ngx-df-col ta-left">
+      <div class="ngx-df-col ta-left" *ngIf="config.submitBtn">
         <button
           type="submit"
           class="ngx-df-btn ngx-df-btn-success"
