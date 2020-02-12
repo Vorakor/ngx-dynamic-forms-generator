@@ -67,6 +67,7 @@
     z-index: 2;
 }
 
+// Start...?
 .ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox ~ .ngx-df-checkbox-custom::after {
     position: absolute;
     content: "";
@@ -126,6 +127,23 @@
     color: #003d7f;
 }
 
+.ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox-btn.warning ~ .ngx-df-cb-label {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffc107;
+    top: 2px;
+    left: 2px;
+    border-radius: 2px;
+    color: #fff;
+    z-index: 3;
+}
+
+.ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox-btn.warning:checked ~ .ngx-df-cb-label {
+    background-color: #fff;
+    color: #b37500;
+}
+
 .ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox-btn ~ .ngx-df-checkbox-custom {
     position: absolute;
     top: 0;
@@ -141,6 +159,23 @@
 .ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox-btn:checked ~ .ngx-df-checkbox-custom {
     border: 2px solid #007bff;
 }
+
+.ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox-btn.warning ~ .ngx-df-checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #ffc107;
+    z-index: 2;
+}
+
+.ngx-df-form-control-label .ngx-df-form-control.ngx-df-checkbox-btn.warning:checked ~ .ngx-df-checkbox-custom {
+    border: 2px solid #ffc107;
+}
+// End...?
 
 .ngx-df-input {
     display: inline-block;
