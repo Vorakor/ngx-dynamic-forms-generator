@@ -1,4 +1,4 @@
-# NgxDynamicForms
+# NgxDynamicFormsGenerator
 
 ## TODO
 
@@ -20,21 +20,21 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Code scaffolding
 
-Run `ng generate component component-name --project ngx-dynamic-forms` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-dynamic-forms`.
+Run `ng generate component component-name --project ngx-dynamic-forms-generator` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-dynamic-forms-generator`.
 
-> Note: Don't forget to add `--project ngx-dynamic-forms` or else it will be added to the default project in your `angular.json` file.
+> Note: Don't forget to add `--project ngx-dynamic-forms-generator` or else it will be added to the default project in your `angular.json` file.
 
 ## Build
 
-Run `ng build ngx-dynamic-forms` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build ngx-dynamic-forms-generator` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build ngx-dynamic-forms`, go to the dist folder `cd dist/ngx-dynamic-forms` and run `npm publish`.
+After building your library with `ng build ngx-dynamic-forms-generator`, go to the dist folder `cd dist/ngx-dynamic-forms-generator` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test ngx-dynamic-forms` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test ngx-dynamic-forms-generator` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 
