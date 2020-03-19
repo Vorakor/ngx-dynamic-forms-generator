@@ -1,5 +1,5 @@
 {
-  "name": "ngx-dynamic-forms",
+  "name": "ngx-dynamic-forms-generator",
   "version": "0.1.0",
   "peerDependencies": {
     "@angular/animations": "^8.2.14",
